@@ -5,16 +5,16 @@ class Linelord < Formula
   
   if OS.linux? && Hardware::CPU.arm?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-linux-arm64.tar.gz"
-    sha256 "aeecc52ca9ed5f951f0acca7486b18dfe9eb52c6fa9f4c810c97707a64632720"
+    sha256 "77db2eb888d981f6771b1a8143f03725fb214e505bb52b98f75b4ab1e806472c"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-linux-x64.tar.gz"
-    sha256 "e2021a350eef777d7c92b3284e6569610045a506f42dac2119ef35f792ebf2e6"
+    sha256 "49e381e27483f2a97b90cbaf88a8e3989055c83cd6570e23c60e7d0cbb7c694a"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-macos-arm64.tar.gz"
-    sha256 "1f3d54a5b404dc53e8396b8d60af966ab7def186925051319a17fd22ea430172"
+    sha256 "a680d41c9fba2fec3dccabe946255c60ed62f83f0fac0febbcfd3ca6ca4b05cf"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-macos-intel.tar.gz"
-    sha256 "871a3e569f03a969f2ad8742de2aefc8b0af407e935014a8dca05b8b3b8949ea"
+    sha256 "77694a96825fb40490c99061f7033be5c25cf0e44edbac390640de978080bc5d"
   end
 
   def install
