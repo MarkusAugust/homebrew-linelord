@@ -1,20 +1,20 @@
 class Linelord < Formula
   desc "Analyze git blame data with developer contribution statistics"
   homepage "https://github.com/MarkusAugust/linelord"
-  version "0.4.1"
+  version "0.5.1"
   
   if OS.linux? && Hardware::CPU.arm?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-linux-arm64.tar.gz"
-    sha256 "3f9412881a53c115b94e91c4d059ebe80c621ecd13ac2c7d7d6d21af78fca979"
+    sha256 "b6ba76763bcd4518eee68d8c0aafd6878f7c9176621fc41bc7de4dc4c616a724"
   elsif OS.linux? && Hardware::CPU.intel?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-linux-x64.tar.gz"
-    sha256 "dc6785ffffb2d4e3afd45e4ce2c31e048db44e394d87ec819c8ae8d0f7747eeb"
+    sha256 "bba980403c633203aad3877700236d2f294f4cb972f93369ef5e94842d926d85"
   elsif OS.mac? && Hardware::CPU.arm?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-macos-arm64.tar.gz"
-    sha256 "ab45f5790b18225c68f9ca55fc596d2b7aa1273c55289ad7ade3f83b5408cca9"
+    sha256 "c8fdd5a5a9fb701844b1032c3ec54e25409884c5646f54cb48b9b7b7c3e7d971"
   elsif OS.mac? && Hardware::CPU.intel?
     url "https://github.com/MarkusAugust/linelord/releases/download/v#{version}/linelord-macos-intel.tar.gz"
-    sha256 "a857dc3ad912c7d5001d34a665cf7a60590e22e44200764d30e08a8caac83424"
+    sha256 "05a1cfa18f90f46a935ae17b670837bd45437a535e38c036f4a780c0b9a24d94"
   end
 
   def install
