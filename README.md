@@ -25,6 +25,6 @@ linelord --help
 
 ---
 
-**For the full saga, battle reports, and Conan's wisdom, venture forth to the [main LineLord repository](https://github.com/MarkusAugust/linelord)!** 🏰
+**For the full saga, battle reports, and Gorvek's wisdom, venture forth to the [main LineLord repository](https://github.com/MarkusAugust/linelord)!** 🏰
 
-_By Crom's hammer, may your installations be swift and your updates be clean!_ 🪓
+_By Huge's hammer, may your installations be swift and your updates be clean!_ 🪓
