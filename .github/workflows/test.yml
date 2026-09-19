@@ -1,0 +1,48 @@
+name: Test formula
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Formula matches the release it names
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fast, and catches the one failure this formula has actually had: the
+      # version and the checksums drifting apart.
+      - name: Verify checksums against the published release
+        run: python3 scripts/verify_formula.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  install:
+    name: Installs and runs
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Homebrew refuses a bare formula path, so tap the checkout itself
+      # rather than the published tap: this must test the formula in this
+      # commit, not the one already on master.
+      - name: Tap this checkout
+        run: brew tap markusaugust/linelord "$GITHUB_WORKSPACE"
+
+      - name: Install
+        run: brew install markusaugust/linelord/linelord
+
+      - name: The installed binary starts
+        run: linelord --version
+
+      - name: Formula passes its own test block
+        run: brew test markusaugust/linelord/linelord
